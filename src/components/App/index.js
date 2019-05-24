@@ -1,5 +1,7 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import HomePage from '../HomePage';
+import DetailCharacterPage from '../DetailCharacterPage';
 
 import './styles.scss';
 
@@ -10,7 +12,6 @@ class App extends React.Component {
             characters: [],
             filter: ''
         };
-
         this.handleChangeInput = this.handleChangeInput.bind(this);
     }
 
@@ -30,7 +31,7 @@ class App extends React.Component {
                 });
 
                 this.setState({
-                    characters: newDada,
+                    characters: newDada
                 });
             });
     }
@@ -40,19 +41,34 @@ class App extends React.Component {
         this.setState({
             filter: value
         });
-        
     }
 
     render() {
-        const {characters, filter } = this.state;
+        const { characters, filter } = this.state;
         return (
-            <div className="App">
-                <HomePage 
-                    charactersList={characters}
-                    onChangeInput={this.handleChangeInput}
-                    valueInput={filter}
+            <Switch>
+                <Route
+                    exact
+                    path="/"
+                    render={routerProps => (
+                        <HomePage
+                            match={routerProps.match}
+                            charactersList={characters}
+                            onChangeInput={this.handleChangeInput}
+                            valueInput={filter}
+                        />
+                    )}
                 />
-            </div>
+                <Route
+                    path="/detail-character/:id"
+                    render={routerProps => (
+                        <DetailCharacterPage
+                            match={routerProps.match}
+                            charactersList={characters}
+                        />
+                    )}
+                />
+            </Switch>
         );
     }
 }
