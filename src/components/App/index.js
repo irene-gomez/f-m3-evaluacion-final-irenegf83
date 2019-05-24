@@ -43,6 +43,11 @@ class App extends React.Component {
         });
     }
 
+    getCharacter(id) {
+        const { characters } = this.state;
+        return characters.find(character => character.id === parseInt(id));
+    }
+
     render() {
         const { characters, filter } = this.state;
         return (
@@ -50,9 +55,8 @@ class App extends React.Component {
                 <Route
                     exact
                     path="/"
-                    render={routerProps => (
+                    render={ () => (
                         <HomePage
-                            match={routerProps.match}
                             charactersList={characters}
                             onChangeInput={this.handleChangeInput}
                             valueInput={filter}
@@ -64,7 +68,7 @@ class App extends React.Component {
                     render={routerProps => (
                         <DetailCharacterPage
                             match={routerProps.match}
-                            charactersList={characters}
+                            character={this.getCharacter(routerProps.match.params.id)}
                         />
                     )}
                 />
