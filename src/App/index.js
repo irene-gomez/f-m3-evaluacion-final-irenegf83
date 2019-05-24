@@ -1,10 +1,17 @@
 import React from 'react';
-import './style.css';
+import HomePage from '../HomePage'
+import Filters from '../Filters'
+import CharacterList from '../CharacterList'
+
+import './styles.scss';
 
 function App() {
     return (
         <div className="App">
-            <p>hola mundo</p>
+            <HomePage />
+            <Filters />
+            <CharacterList />
+
         </div>
     );
 }
