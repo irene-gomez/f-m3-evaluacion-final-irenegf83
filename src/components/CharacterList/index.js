@@ -8,7 +8,7 @@ const CharacterList = props => {
         <ul>
         {charactersList.map(character => {
             return (
-                <li>
+                <li key={character.id}>
                     <CharacterCard 
                         image={character.image}
                         name={character.name}
