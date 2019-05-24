@@ -7,8 +7,11 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            characters: []
+            characters: [],
+            filter: ''
         };
+
+        this.handleChangeInput = this.handleChangeInput.bind(this);
     }
 
     componentDidMount() {
@@ -32,10 +35,23 @@ class App extends React.Component {
             });
     }
 
+    handleChangeInput(e) {
+        const { value } = e.currentTarget;
+        this.setState({
+            filter: value
+        });
+        
+    }
+
     render() {
+        const {characters, filter } = this.state;
         return (
             <div className="App">
-                <HomePage charactersList={this.state.characters} />
+                <HomePage 
+                    charactersList={characters}
+                    onChangeInput={this.handleChangeInput}
+                    valueInput={filter}
+                />
             </div>
         );
     }

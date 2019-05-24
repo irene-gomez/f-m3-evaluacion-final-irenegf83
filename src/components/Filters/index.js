@@ -7,8 +7,8 @@ const Filters = props => {
             <input 
                 type="text"
                 id="search-character"
-                value=""
-                onChange={e => console.log(e)}
+                value={props.valueInput}
+                onChange={props.onChangeInput}
             />
         </div>
     );

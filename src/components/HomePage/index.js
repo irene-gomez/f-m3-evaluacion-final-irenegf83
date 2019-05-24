@@ -4,13 +4,19 @@ import Filters from '../Filters'
 import CharacterList from '../CharacterList'
 
 const HomePage = props => {
-    const { charactersList } = props;
+    const { charactersList, onChangeInput, valueInput } = props;
 
     return (
         <Fragment>
             <Header />
-            <Filters />
-            <CharacterList charactersList={charactersList}/>
+            <Filters 
+                onChangeInput={onChangeInput}
+                valueInput={valueInput}
+            />
+            <CharacterList 
+                charactersList={charactersList}
+                valueInput={valueInput}
+            />
         </Fragment>
     );
 }
