@@ -1,0 +1,16 @@
+.filter {
+    text-align: center;
+    &__label {
+        display: block;
+        margin-bottom: 15px;
+        @media all and (min-width: 680px) {
+            display: inline-block;
+            margin-right: 15px;
+        }
+    }
+    &__input {
+        width: 250px;
+        height: 35px;
+        margin-bottom: 25px;
+    }
+}

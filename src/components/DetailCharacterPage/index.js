@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const DetailCharacterPage = props => {
     const { character } = props;
@@ -17,6 +18,15 @@ const DetailCharacterPage = props => {
             <Link to="/">Volver</Link>
         </div>
     );
+};
+
+DetailCharacterPage.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    house: PropTypes.string,
+    yearOfBirth: PropTypes.number,
+    patronus: PropTypes.string,
+    alive: PropTypes.string,
 };
 
 export default DetailCharacterPage;
