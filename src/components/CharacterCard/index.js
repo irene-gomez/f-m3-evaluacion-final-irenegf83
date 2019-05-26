@@ -1,12 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import './styles.scss';
+
 const CharacterCard = props => {
     return (
-        <div>
-            <img src={props.image} alt={props.name} />
-            <p>{props.name}</p>
-            <p>{props.house}</p>
+        <div className="card">
+            <div className="card__image">
+                <img  src={props.image} alt={props.name} />
+            </div>
+            <p className="card__name">{props.name}</p>
+            <p className="card__house">{props.house ? props.house : 'Sin casa'}</p>
         </div>
     );
 };

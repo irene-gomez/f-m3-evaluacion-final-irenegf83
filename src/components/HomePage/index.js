@@ -5,20 +5,24 @@ import Header from '../Header'
 import Filters from '../Filters'
 import CharacterList from '../CharacterList'
 
+import './styles.scss'
+
 const HomePage = props => {
     const { charactersList, onChangeInput, valueInput } = props;
     
     return (
         <Fragment>
             <Header />
-            <Filters 
-                onChangeInput={onChangeInput}
-                valueInput={valueInput}
-            />
-            <CharacterList 
-                charactersList={charactersList}
-                valueInput={valueInput}
-            />
+            <main className="main__container">
+                <Filters 
+                    onChangeInput={onChangeInput}
+                    valueInput={valueInput}
+                />
+                <CharacterList 
+                    charactersList={charactersList}
+                    valueInput={valueInput}
+                />
+            </main>
         </Fragment>
     );
 };

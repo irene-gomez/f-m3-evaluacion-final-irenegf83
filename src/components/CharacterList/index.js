@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 
 import CharacterCard from '../CharacterCard';
 
+import './styles.scss';
+
 const CharacterList = props => {
     const { charactersList, valueInput } = props;
     
     return (
-        <ul>
+        <ul className="container-list">
             {charactersList
                 .filter(character => character.name.toLowerCase().includes(valueInput))
                 .map(character => {
