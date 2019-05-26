@@ -1,4 +1,12 @@
-// @import '../src/scss/fonts';
+@import './scss/variables';
+@font-face {
+  font-family: 'HarryPotter';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/HARRYP.woff2') format('woff2'),
+      url('./fonts/HARRYP.woff') format('woff'),
+      url('./fonts/HARRYP.ttf') format('truetype');
+}
 
 *, *::before, *::after {
   margin: 0;
@@ -18,6 +26,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  color: $color-black-rock;
 }
 
 a {

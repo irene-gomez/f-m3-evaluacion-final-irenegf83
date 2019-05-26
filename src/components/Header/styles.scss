@@ -1,6 +1,10 @@
+@import '../../scss/variables';
+
 .main__title {
     font-family: 'HarryPotter', fantasy ;
-    color: #F0B22D;
+    color: $color-yellow-snitch;
     text-align: center;
+    font-size: 50px;
     margin-bottom: 30px;
+    letter-spacing: 13px;
 }
