@@ -10,7 +10,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             characters: [],
-            filter: ''
+            filter: '',
+            isLoading: true
         };
         this.handleChangeInput = this.handleChangeInput.bind(this);
     }
@@ -31,7 +32,8 @@ class App extends React.Component {
                 });
 
                 this.setState({
-                    characters: newDada
+                    characters: newDada,
+                    isLoading: false
                 });
             });
     }
@@ -49,7 +51,7 @@ class App extends React.Component {
     }
 
     render() {
-        const { characters, filter } = this.state;
+        const { characters, filter, isLoading } = this.state;
         return (
             <Switch>
                 <Route
@@ -60,6 +62,7 @@ class App extends React.Component {
                             charactersList={characters}
                             onChangeInput={this.handleChangeInput}
                             valueInput={filter}
+                            loading={isLoading}
                         />
                     )}
                 />
