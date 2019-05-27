@@ -6,12 +6,11 @@ import CharacterCard from '../CharacterCard';
 import './styles.scss';
 
 const CharacterList = props => {
-    const { charactersList, valueInput } = props;
-    
+    const { charactersList } = props;
+
     return (
         <ul className="container-list">
             {charactersList
-                .filter(character => character.name.toLowerCase().includes(valueInput))
                 .map(character => {
                     return (
                         <li key={character.id}>
@@ -24,14 +23,13 @@ const CharacterList = props => {
                             </Link>
                         </li>
                     );
-                })
-            }
+                })}
         </ul>
     );
 };
 
 CharacterList.propTypes = {
-    charactersList: PropTypes.arrayOf(PropTypes.object).isRequired,
+    charactersList: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default CharacterList;
