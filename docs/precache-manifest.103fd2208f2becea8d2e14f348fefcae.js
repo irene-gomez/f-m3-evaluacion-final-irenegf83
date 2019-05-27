@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6c51332a88ef61446a0bbaa7e1aea71",
+    "revision": "2babc52bcbf1451ef94a182e39ec72da",
     "url": "./index.html"
   },
   {
-    "revision": "ff90d0f9c55d2cc653ab",
-    "url": "./static/css/main.2f076d09.chunk.css"
+    "revision": "7eceedd4f4f865dd8850",
+    "url": "./static/css/main.907692c9.chunk.css"
   },
   {
     "revision": "97f7ebd97d1653e16046",
     "url": "./static/js/2.0276fec2.chunk.js"
   },
   {
-    "revision": "ff90d0f9c55d2cc653ab",
-    "url": "./static/js/main.49a945a7.chunk.js"
+    "revision": "7eceedd4f4f865dd8850",
+    "url": "./static/js/main.4f7f6e81.chunk.js"
   },
   {
     "revision": "8c97409f0ee389fe75da",
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "./static/media/hufflepuff_flag.bf91b6bc.png"
   },
   {
-    "revision": "51ebf142c8d9ac399fb7e24939e32a6e",
-    "url": "./static/media/main-backgorund.51ebf142.jpg"
+    "revision": "5827940f0d81b6f3d358d14487ff70d0",
+    "url": "./static/media/main-backgorund.5827940f.jpg"
   },
   {
     "revision": "5b2a0e27774db390b4b2f904a3ba8cc8",
