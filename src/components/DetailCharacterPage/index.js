@@ -10,9 +10,9 @@ const DetailCharacterPage = props => {
             <div>
                 <img src={character.image} alt={character.name} />
                 <h2>{character.name}</h2>
-                <p>Casa: {character.house}</p>
-                <p>Nacimiento: {character.yearOfBirth}</p>
-                <p>Patronus: {character.patronus}</p>
+                <p>Casa: {character.house ? character.house : 'Sin casa'}</p>
+                <p>Nacimiento: {character.yearOfBirth ? character.yearOfBirth : '-'}</p>
+                <p>Patronus: {character.patronus ? character.patronus : '-'}</p>
                 <p>Estado: {character.alive ? 'Vivo' : '☠️'}</p>
             </div>
             <Link to="/">Volver</Link>

@@ -10,11 +10,14 @@ import './styles.scss';
 const flags = house => {
     if(house === 'Gryffindor') {
         return gryffindor_flag;
-    } else if(house === 'Slytherin') {
+    } 
+    if(house === 'Slytherin') {
         return slytherin_flag;
-    } else if(house === 'Hufflepuff') {
+    }
+    if(house === 'Hufflepuff') {
         return hufflepuff_flag;
-    } else if(house === 'Ravenclaw') {
+    }
+    if(house === 'Ravenclaw') {
         return ravenclaw_flag;
     } else {
         return '';
