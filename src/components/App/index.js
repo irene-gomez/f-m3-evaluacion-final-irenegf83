@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HomePage from '../HomePage';
 import DetailCharacterPage from '../DetailCharacterPage';
+import fetchHarryPotter from '../../services/fetchHarryPotter';
 
 import './styles.scss';
 
@@ -21,8 +22,7 @@ class App extends React.Component {
     }
 
     getData() {
-        fetch('http://hp-api.herokuapp.com/api/characters')
-            .then(response => response.json())
+        fetchHarryPotter()
             .then(data => {
                 const newDada = data.map((item, index) => {
                     return {
@@ -57,7 +57,7 @@ class App extends React.Component {
                 <Route
                     exact
                     path="/"
-                    render={ () => (
+                    render={() => (
                         <HomePage
                             charactersList={characters}
                             onChangeInput={this.handleChangeInput}
