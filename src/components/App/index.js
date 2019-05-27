@@ -4,8 +4,6 @@ import HomePage from '../HomePage';
 import DetailCharacterPage from '../DetailCharacterPage';
 import fetchHarryPotter from '../../services/fetchHarryPotter';
 
-import './styles.scss';
-
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -41,7 +39,7 @@ class App extends React.Component {
     handleChangeInput(e) {
         const { value } = e.currentTarget;
         this.setState({
-            filter: value
+            filter: value.toLowerCase()
         });
     }
 

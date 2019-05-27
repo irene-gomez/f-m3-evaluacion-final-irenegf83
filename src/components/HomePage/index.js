@@ -6,15 +6,13 @@ import Filters from '../Filters';
 import CharacterList from '../CharacterList';
 import Spinner from '../Spinner';
 
-import './styles.scss';
-
 const HomePage = props => {
     const { charactersList, onChangeInput, valueInput, loading } = props;
 
     return (
         <Fragment>
             <Header />
-            <main className="main__container">
+            <main>
                 <Filters
                     onChangeInput={onChangeInput}
                     valueInput={valueInput}

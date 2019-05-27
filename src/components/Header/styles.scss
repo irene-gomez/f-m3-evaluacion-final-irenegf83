@@ -1,14 +1,14 @@
 @import '../../scss/variables';
 
 .main__title {
-    font-family: 'HarryPotter', fantasy ;
+    font-family: 'HarryPotter', fantasy;
     color: $color-yellow-snitch;
     text-align: center;
     font-size: 60px;
     line-height: 1;
     margin: 20px 0 15px 0;
     letter-spacing: 5px;
-    text-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
     @media all and (min-width: 680px) {
         font-size: 80px;
         margin: 20px 0 22px 0;
