@@ -1,0 +1,48 @@
+@import '../../scss/variables';
+@import '../../scss/mixins';
+
+.wrapper-detail {
+    @include horizontalCentered;
+}
+
+.detail-character {
+    background-color: $color-yellow-snitch;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 7px 9px 11px rgba(0, 0, 0, .5);
+    @media all and (min-width: 1075px) {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__image {
+        width: auto;
+        height: 300px;
+        @media all and (min-width: 1075px) {
+            margin-right: 20px;
+        }
+    }
+    &__name {
+        font-family: 'HarryPotter', fantasy ;
+        font-size: 40px;
+        line-height: 1;
+        text-align: center;
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+        margin-bottom: 10px;
+    }
+    &--bold {
+        font-weight: 600;
+    }
+}
+
+.btn__home {
+    cursor: pointer;
+    background-color: $color-red-gryffindor;
+    color: $color-white-snow;
+    padding: 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, .3);
+    @include horizontalCentered;
+}

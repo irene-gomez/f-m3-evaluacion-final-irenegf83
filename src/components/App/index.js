@@ -72,6 +72,7 @@ class App extends React.Component {
                         <DetailCharacterPage
                             match={routerProps.match}
                             character={this.getCharacter(routerProps.match.params.id)}
+                            loading={isLoading}
                         />
                     )}
                 />

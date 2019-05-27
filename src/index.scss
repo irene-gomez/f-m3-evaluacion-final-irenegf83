@@ -21,11 +21,13 @@ ul, ol {
 body {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
+  line-height: 1.5;
   padding: 20px;
   background-image: url('./images/main-backgorund.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  background-position: center;
   color: $color-black-rock;
 }
 
