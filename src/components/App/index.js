@@ -57,7 +57,9 @@ class App extends React.Component {
                     path="/"
                     render={() => (
                         <HomePage
-                            charactersList={characters}
+                            charactersList={characters
+                                .filter(character => character.name.toLowerCase().includes(filter))
+                            }
                             onChangeInput={this.handleChangeInput}
                             valueInput={filter}
                             loading={isLoading}
