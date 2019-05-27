@@ -2,6 +2,7 @@
   "name": "f-m3-evaluacion-final-irenegf83",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
