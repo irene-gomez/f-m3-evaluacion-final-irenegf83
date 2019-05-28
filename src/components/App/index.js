@@ -13,12 +13,14 @@ class App extends React.Component {
             isLoading: true,
             allHouses: ['Gryffindor', 'Slytherin', 'Hufflepuff', 'Ravenclaw', ''],
             filtersChecks: [],
-            filtersSelect: ''
+            filtersSelect: '',
+            filtersRadio: ''
 
         };
         this.handleChangeInput = this.handleChangeInput.bind(this);
         this.handleChangeCheck = this.handleChangeCheck.bind(this);
         this.handleChangeSelect = this.handleChangeSelect.bind(this);
+        this.handleChangeRadio = this.handleChangeRadio.bind(this);
     }
 
     componentDidMount() {
@@ -42,6 +44,13 @@ class App extends React.Component {
             });
     }
 
+    handleChangeRadio(e) {
+        const { value } = e.currentTarget;
+        this.setState({
+            filtersRadio: value
+        });
+    }
+
     handleChangeCheck(e){
         const { value, checked } = e.currentTarget;
 
@@ -56,11 +65,9 @@ class App extends React.Component {
 
     handleChangeSelect(e) {
         const { value } = e.currentTarget
-        console.log(value);
         this.setState({
             filtersSelect: value
         });
-        
     }
 
     handleChangeInput(e) {
@@ -85,8 +92,9 @@ class App extends React.Component {
                     render={() => (
                         <HomePage
                             charactersList={characters
-                                .filter(item => !filtersChecks.length || filtersChecks.includes(item.house))
-                                .filter(item => !filtersSelect.length || item.house.includes(filtersSelect))
+                                // .filter(item => !filtersChecks.length || filtersChecks.includes(item.house))
+                                // .filter(item => !filtersSelect.length || item.house.includes(filtersSelect))
+                                .filter(item => item.house.includes(this.state.filtersRadio))
                                 .filter(character => character.name.toLowerCase().includes(filter))
                             }
                             onChangeInput={this.handleChangeInput}
@@ -96,6 +104,7 @@ class App extends React.Component {
                             infoFiltersChecks={filtersChecks}
                             allHouses={allHouses}
                             onChangeSelect={this.handleChangeSelect}
+                            onChangeRadio={this.handleChangeRadio}
 
                         />
                     )}

@@ -26,7 +26,7 @@ const HomePage = props => {
                     valueInput={valueInput}
                 />
                 <form>
-                    {allHouses.map((item, index) => {
+                    {/* {allHouses.map((item, index) => {
                         return (
                             <div key={index}>
                                 <input
@@ -36,23 +36,42 @@ const HomePage = props => {
                                     value={item}
                                     onChange={onCheckCheckbox}
                                 />
-                                <label htmlFor={item}>{item ? item : 'Sin casa'}</label>
+                                <label htmlFor={item}>
+                                    {item ? item : 'Sin casa'}
+                                </label>
                             </div>
                         );
                     })}
-                    <select name="houses" id="housesHarry" onChange={props.onChangeSelect}>
+                    <select
+                        name="houses"
+                        id="housesHarry"
+                        onChange={props.onChangeSelect}
+                    >
+                        <option value="">Selecciona una casa</option>
                         {allHouses.map((item, index) => {
                             return (
-                                    <option 
-                                        key={index}
-                                        value={item}
-                                        
-                                    >
-                                        {item}
-                                    </option>
+                                <option key={index} value={item}>
+                                    {item ? item : 'Sin casa'}
+                                </option>
                             );
                         })}
-                    </select>
+                    </select> */}
+                    {allHouses.map((item, index) => {
+                        return (
+                            <div key={index}>
+                                <input
+                                    type="radio"
+                                    name="houses"
+                                    id={item ? item : 'sinCasa'}
+                                    value={item ? item : ''}
+                                    onChange={props.onChangeRadio}
+                                />
+                                <label htmlFor={item ? item : 'sinCasa'}>
+                                    {item ? item : 'Sin casa'}
+                                </label>
+                            </div>
+                        );
+                    })}
                 </form>
                 {loading ? (
                     <Spinner />
