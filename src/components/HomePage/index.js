@@ -7,7 +7,7 @@ import CharacterList from '../CharacterList';
 import Spinner from '../Spinner';
 
 const HomePage = props => {
-    const { charactersList, onChangeInput, valueInput, loading } = props;
+    const { charactersList, onChangeInput, valueInput, loading, onChangeSelect } = props;
 
     return (
         <Fragment>
@@ -17,6 +17,11 @@ const HomePage = props => {
                     onChangeInput={onChangeInput}
                     valueInput={valueInput}
                 />
+                <select name="alive" id="alive" onChange={onChangeSelect}>
+                    <option value="all">All</option>
+                    <option value="alive">Alive</option>
+                    <option value="dead">Dead</option>
+                </select>
                 {loading ? (
                     <Spinner />
                 ) : (

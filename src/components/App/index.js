@@ -10,9 +10,11 @@ class App extends React.Component {
         this.state = {
             characters: [],
             filter: '',
-            isLoading: true
+            isLoading: true,
+            isAlive: 'all'
         };
         this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.handleChangeSelect = this.handleChangeSelect.bind(this);
     }
 
     componentDidMount() {
@@ -36,6 +38,13 @@ class App extends React.Component {
             });
     }
 
+    handleChangeSelect(e){
+        const { value } = e.currentTarget;
+        this.setState({
+            isAlive: value
+        });
+    }
+
     handleChangeInput(e) {
         const { value } = e.currentTarget;
         this.setState({
@@ -49,7 +58,7 @@ class App extends React.Component {
     }
 
     render() {
-        const { characters, filter, isLoading } = this.state;
+        const { characters, filter, isLoading, isAlive } = this.state;
         return (
             <Switch>
                 <Route
@@ -58,11 +67,22 @@ class App extends React.Component {
                     render={() => (
                         <HomePage
                             charactersList={characters
+                                .filter(item => {
+                                    if(isAlive === 'all'){
+                                        return true;
+                                    } else if (isAlive === 'alive') {
+                                        return item.alive === true;
+                                    } else {
+                                        return item.alive === false;
+                                    }
+                            
+                                })
                                 .filter(character => character.name.toLowerCase().includes(filter))
                             }
                             onChangeInput={this.handleChangeInput}
                             valueInput={filter}
                             loading={isLoading}
+                            onChangeSelect={this.handleChangeSelect}
                         />
                     )}
                 />
