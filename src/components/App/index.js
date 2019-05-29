@@ -74,8 +74,7 @@ class App extends React.Component {
                                         return item.alive === true;
                                     } else {
                                         return item.alive === false;
-                                    }
-                            
+                                    }                            
                                 })
                                 .filter(character => character.name.toLowerCase().includes(filter))
                             }
